@@ -20,6 +20,10 @@ public class SteamManager : MonoBehaviour {
             SteamClient.Init(STEAM_APP_ID);
             Debug.Log($"[{nameof(SteamManager)}] Initialised <color={STEAM_COLOR}>Steam</color>!");
             Debug.Log($"[{nameof(SteamManager)}] Logged in with account \"{SteamClient.Name}\"");
+
+            foreach (var friend in SteamFriends.GetFriends()) {
+                Debug.Log($"Steam friend: {friend.Name}");
+            }
         } catch (System.Exception e) {
             Debug.LogWarning($"[{nameof(SteamManager)}] Couldn't initialise <color={STEAM_COLOR}>Steam</color>: {e}");
         }
