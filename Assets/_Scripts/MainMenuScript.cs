@@ -1,57 +1,42 @@
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
-using UnityEngine.Rendering.VirtualTexturing;
-public class MainMenuScript : MonoBehaviour {
 
-    [SerializeField] SoundManager soundManager;
-    [SerializeField] GameObject mainMenuObj;
-        [SerializeField] GameObject singlePlayerObj;
-        [SerializeField] GameObject multiPlayerObj;
-        [SerializeField] GameObject endGameObj;
-        [SerializeField] GameObject settingsMenuObj;
-            [SerializeField] GameObject audioSettingsObj;
-            [SerializeField] GameObject overallSettingsObj;
-            [SerializeField] GameObject videoSettingsObj;
-            [SerializeField] GameObject keybindsSettingsObj;
+public class MainMenuScript : MenuBase {
+    //[Header(nameof(MainMenuScript))]
+    // To be added
 
+    // Overrides
 
-
-    void Start() {
-        mainMenuObj.SetActive(true);
+    public override void OpenSubmenu(int newSubmenu) {
+        switch (newSubmenu) {
+            case (int) SubmenuType.None:
+                CloseAnySubmenu();
+                PlayClickSound();
+                break;
+            case (int) SubmenuType.Settings:
+                if (anySubmenuOpen) { CloseAnySubmenu(); }
+                submenuObjs[newSubmenu].SetActive(true);
+                PlayClickSound();
+                anySubmenuOpen = true;
+                break;
+            default:
+                break;
+        }
     }
 
-    private void Update() {
-        if (!Input.GetKeyDown(KeyCode.Mouse0)) { return; }
+    // Main Menu
 
-        SoundManager.Singleton.PlayRandomSound();
-    }
-
-    public void EndGame() {
+    public void Quit() {
         Application.Quit();
+
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
     }
-    public void OpenSettingsMenu() {
-        if (settingsMenuObj.activeSelf) {
-            settingsMenuObj.SetActive(false);
-            mainMenuObj.SetActive(true);
-        } else {
-            mainMenuObj.SetActive(false);
-            settingsMenuObj.SetActive(true);
-        }
-    }
-    
-    public void OpenOverallSettings() {
-        if (overallSettingsObj.activeSelf) {
-            overallSettingsObj.SetActive(false);
-        } else {
-            overallSettingsObj.SetActive(true);
-        }
-    }
-    public void LoadScene() {
-        SceneManager.LoadScene(2);
+
+    // Other
+
+    new enum SubmenuType {
+        Settings,
+        None = -1
     }
 }
