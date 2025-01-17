@@ -1,11 +1,14 @@
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour {
-    
+    public static SoundManager Singleton {  get; private set; }
     [SerializeField] AudioClip[] soundClips;
 
     
     private AudioSource audioSource;
+    private void Awake() {
+        Singleton = this;
+    }
 
     private void Start() {
         

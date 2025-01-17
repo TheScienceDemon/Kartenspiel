@@ -537,7 +537,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1235142099}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: OpenSettingsMenu
+        m_MethodName: EndGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2030,7 +2030,7 @@ MonoBehaviour:
   mainMenuObj: {fileID: 270306080}
   singlePlayerObj: {fileID: 0}
   multiPlayerObj: {fileID: 0}
-  endGameObj: {fileID: 0}
+  endGameObj: {fileID: 205921777}
   settingsMenuObj: {fileID: 1512191175}
   audioSettingsObj: {fileID: 324189303}
   overallSettingsObj: {fileID: 2116263534}

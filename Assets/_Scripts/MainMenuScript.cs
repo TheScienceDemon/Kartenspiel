@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.VirtualTexturing;
 public class MainMenuScript : MonoBehaviour {
 
     [SerializeField] SoundManager soundManager;
@@ -21,25 +22,33 @@ public class MainMenuScript : MonoBehaviour {
         mainMenuObj.SetActive(true);
     }
 
+    private void Update() {
+        if (!Input.GetKeyDown(KeyCode.Mouse0)) { return; }
+
+        SoundManager.Singleton.PlayRandomSound();
+    }
+
+    public void EndGame() {
+        Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
     public void OpenSettingsMenu() {
         if (settingsMenuObj.activeSelf) {
             settingsMenuObj.SetActive(false);
             mainMenuObj.SetActive(true);
-            soundManager.PlayRandomSound();
         } else {
             mainMenuObj.SetActive(false);
             settingsMenuObj.SetActive(true);
-            soundManager.PlayRandomSound();
         }
     }
     
     public void OpenOverallSettings() {
         if (overallSettingsObj.activeSelf) {
             overallSettingsObj.SetActive(false);
-            soundManager.PlayRandomSound();
         } else {
             overallSettingsObj.SetActive(true);
-            soundManager.PlayRandomSound();
         }
     }
     public void LoadScene() {
