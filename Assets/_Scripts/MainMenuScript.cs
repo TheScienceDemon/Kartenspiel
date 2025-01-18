@@ -1,9 +1,5 @@
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
-using UnityEngine.Rendering.VirtualTexturing;
 using Mirror;
+using UnityEngine;
 
 public class MainMenuScript : MenuBase {
     //[Header(nameof(MainMenuScript))]
