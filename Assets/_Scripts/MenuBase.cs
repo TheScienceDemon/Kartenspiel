@@ -43,7 +43,7 @@ public abstract class MenuBase : MonoBehaviour {
         anySubmenuOpen = false;
     }
 
-    public void PlayClickSound() {
+    protected void PlayClickSound() {
         source.PlayOneShot(clickSound);
     }
 
