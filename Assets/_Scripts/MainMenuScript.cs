@@ -37,6 +37,7 @@ public class MainMenuScript : MenuBase {
 #endif
     }
 
+
     // Other
 
     new enum SubmenuType {
