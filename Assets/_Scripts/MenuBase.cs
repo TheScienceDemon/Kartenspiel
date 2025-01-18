@@ -7,7 +7,6 @@ public abstract class MenuBase : MonoBehaviour {
     [SerializeField] protected GameObject[] submenuObjs;
 
     protected AudioSource source;
-    protected bool anySubmenuOpen;
 
     // To be added later:
     // protected Mirror.NetworkManager networkManager;
@@ -25,10 +24,9 @@ public abstract class MenuBase : MonoBehaviour {
                 PlayClickSound();
                 break;
             case (int) SubmenuType.XXX:
-                if (anySubmenuOpen) { CloseAnySubmenu(); }
+                CloseAnySubmenu();
                 submenuObjs[newSubmenu].SetActive(true);
                 PlayClickSound();
-                anySubmenuOpen = true;
                 break;
             default:
                 break;
@@ -39,8 +37,6 @@ public abstract class MenuBase : MonoBehaviour {
         foreach (GameObject submenu in submenuObjs) {
             submenu.SetActive(false);
         }
-
-        anySubmenuOpen = false;
     }
 
     protected void PlayClickSound() {

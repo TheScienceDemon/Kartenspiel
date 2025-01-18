@@ -1,18 +1,16 @@
 using UnityEngine;
 
-public class MainMenuScript : MenuBase {
-    //[Header(nameof(MainMenuScript))]
-    // To be added
-
-    // Overrides
-
+public class SettingsMenuScript : MenuBase {
     public override void OpenSubmenu(int newSubmenu) {
         switch (newSubmenu) {
             case (int) SubmenuType.None:
                 CloseAnySubmenu();
                 PlayClickSound();
                 break;
-            case (int) SubmenuType.Settings:
+            case (int) SubmenuType.Graphics:
+            case (int) SubmenuType.Audio:
+            case (int) SubmenuType.Controls:
+            case (int) SubmenuType.Other:
                 CloseAnySubmenu();
                 submenuObjs[newSubmenu].SetActive(true);
                 PlayClickSound();
@@ -22,20 +20,11 @@ public class MainMenuScript : MenuBase {
         }
     }
 
-    // Main Menu
-
-    public void Quit() {
-        Application.Quit();
-
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
-    }
-
-    // Other
-
     new enum SubmenuType {
-        Settings,
-        None = -1
+        None = -1,
+        Graphics,
+        Audio,
+        Controls,
+        Other
     }
 }
