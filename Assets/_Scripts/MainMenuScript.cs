@@ -1,4 +1,9 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.VirtualTexturing;
+using Mirror;
 
 public class MainMenuScript : MenuBase {
     //[Header(nameof(MainMenuScript))]
@@ -23,6 +28,10 @@ public class MainMenuScript : MenuBase {
     }
 
     // Main Menu
+
+    public void HostGame() {
+        NetworkManager.singleton.StartHost();
+    }
 
     public void Quit() {
         Application.Quit();
