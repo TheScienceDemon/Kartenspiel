@@ -2,5 +2,6 @@ using UnityEngine;
 
 public class CurrentSettings : MonoBehaviour {
 
-    [Ser]
+    public const int MAX_HEALTH_RULE = 0;
+
 }
