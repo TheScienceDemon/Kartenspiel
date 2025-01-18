@@ -278,7 +278,7 @@ PrefabInstance:
     - target: {fileID: 8714895977425058142, guid: 6212273669f2bf340a0332a11148bd31,
         type: 3}
       propertyPath: m_text
-      value: Audio
+      value: Punktesystem
       objectReference: {fileID: 0}
     - target: {fileID: 8714895977425058142, guid: 6212273669f2bf340a0332a11148bd31,
         type: 3}
@@ -1079,7 +1079,12 @@ PrefabInstance:
     - target: {fileID: 8714895977425058142, guid: 6212273669f2bf340a0332a11148bd31,
         type: 3}
       propertyPath: m_text
-      value: Grafik
+      value: Regeln
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714895977425058142, guid: 6212273669f2bf340a0332a11148bd31,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8714895977425058142, guid: 6212273669f2bf340a0332a11148bd31,
         type: 3}
@@ -2766,7 +2771,7 @@ PrefabInstance:
     - target: {fileID: 8714895977425058142, guid: 6212273669f2bf340a0332a11148bd31,
         type: 3}
       propertyPath: m_text
-      value: Steuerung
+      value: Zugsystem
       objectReference: {fileID: 0}
     - target: {fileID: 8714895977425058142, guid: 6212273669f2bf340a0332a11148bd31,
         type: 3}
