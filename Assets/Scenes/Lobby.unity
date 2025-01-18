@@ -278,7 +278,7 @@ PrefabInstance:
     - target: {fileID: 8714895977425058142, guid: 6212273669f2bf340a0332a11148bd31,
         type: 3}
       propertyPath: m_text
-      value: Punktesystem
+      value: Zugsystem
       objectReference: {fileID: 0}
     - target: {fileID: 8714895977425058142, guid: 6212273669f2bf340a0332a11148bd31,
         type: 3}
@@ -2577,7 +2577,7 @@ PrefabInstance:
     - target: {fileID: 8714895977425058142, guid: 6212273669f2bf340a0332a11148bd31,
         type: 3}
       propertyPath: m_text
-      value: Anderes
+      value: Regelvorlagen
       objectReference: {fileID: 0}
     - target: {fileID: 8714895977425058142, guid: 6212273669f2bf340a0332a11148bd31,
         type: 3}
@@ -2771,7 +2771,7 @@ PrefabInstance:
     - target: {fileID: 8714895977425058142, guid: 6212273669f2bf340a0332a11148bd31,
         type: 3}
       propertyPath: m_text
-      value: Zugsystem
+      value: Anderes
       objectReference: {fileID: 0}
     - target: {fileID: 8714895977425058142, guid: 6212273669f2bf340a0332a11148bd31,
         type: 3}
