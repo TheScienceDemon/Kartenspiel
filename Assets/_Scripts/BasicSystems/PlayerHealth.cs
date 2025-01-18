@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour {
         health -= damage;
     }
 
-    public void ÍncreaseHealth(int heal) {
+    public void IncreaseHealth(int heal) {
         health += heal;
     }
 }

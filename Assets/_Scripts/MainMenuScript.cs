@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.VirtualTexturing;
+using Mirror;
 public class MainMenuScript : MonoBehaviour {
 
     [SerializeField] SoundManager soundManager;
@@ -26,6 +27,10 @@ public class MainMenuScript : MonoBehaviour {
         if (!Input.GetKeyDown(KeyCode.Mouse0)) { return; }
 
         SoundManager.Singleton.PlayRandomSound();
+    }
+
+    public void HostGame() {
+        NetworkManager.singleton.StartHost();
     }
 
     public void EndGame() {

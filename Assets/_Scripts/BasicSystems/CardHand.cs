@@ -42,8 +42,7 @@ public class CardHand : MonoBehaviour {
             int row = i / maxCardsPerRow;
             int column = i % maxCardsPerRow;
 
-            Vector3 newPosition = startPosition
-                                  + new Vector3(column * cardSpacing, -row * rowSpacing, 0);
+            Vector3 newPosition = startPosition + new Vector3(column * cardSpacing, -row * rowSpacing, 0);
             cardsInHand[i].transform.localPosition = newPosition;
         }
     }
